@@ -10,7 +10,7 @@ import java.util.List;
 // can make item available or unavailable  on store this is a todo
 // can change product price if user is store listing admin this is a todo
 @AllArgsConstructor
-public class StoreList {
+class StoreList {
     final Inventory inventory;
 
     List<Product> listAllInStockProducts() {

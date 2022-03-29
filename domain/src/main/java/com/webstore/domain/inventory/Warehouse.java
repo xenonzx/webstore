@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.util.Map;
 
 @AllArgsConstructor
-public class Warehouse {
+class Warehouse {
     @Getter
     final Map<ShelfItem, Integer> stock;
 }

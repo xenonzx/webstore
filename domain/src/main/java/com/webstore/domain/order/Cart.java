@@ -8,6 +8,7 @@ import lombok.NonNull;
 
 import java.util.ArrayList;
 
+//cart is aggregate root entity according to current understanding
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cart {
@@ -15,11 +16,13 @@ public class Cart {
     @NonNull
     private ArrayList<LineItem> items = new ArrayList<>();
 
+
     void addLineItem(Product product, int quantity) {
-        items.forEach(lineItem -> {
-            if (lineItem.getProductId() == product.getSkuNumber()) {
-                lineItem.addQuantity(quantity);
-            }
-        });
+
+        items.stream()
+                .filter(lineItem -> lineItem.getProductId() == product.getSkuNumber())
+                .findFirst()
+                .ifPresentOrElse(lineItem -> lineItem.addQuantity(quantity), () -> items.add(new LineItem(product, quantity)));
+
     }
 }

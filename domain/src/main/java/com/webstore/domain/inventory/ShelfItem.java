@@ -4,6 +4,6 @@ import lombok.Data;
 
 
 @Data
-public class ShelfItem {
+class ShelfItem {
     final Long skuNumber;
 }

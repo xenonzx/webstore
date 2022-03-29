@@ -1,6 +1,6 @@
 package com.webstore.domain.storelisting;
 
-public enum ProductAvailability {
+enum ProductAvailability {
     IN_STOCK,
     OUT_OF_STOCK
 }

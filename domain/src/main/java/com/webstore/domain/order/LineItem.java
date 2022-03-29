@@ -4,7 +4,7 @@ import com.webstore.domain.storelisting.Product;
 import lombok.Getter;
 
 
-public class LineItem {
+ class LineItem {
     @Getter
     private final long productId;
     private final double unitPrice;

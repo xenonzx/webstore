@@ -1,6 +1,6 @@
 package com.webstore.domain.order;
 
-public enum OrderStatus {
+enum OrderStatus {
     CREATED,
     COMPLETED
 }

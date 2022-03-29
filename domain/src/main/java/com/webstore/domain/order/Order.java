@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class Order {
+class Order {
     private UUID id;
     private OrderStatus status;
     private List<LineItem> orderItems;
