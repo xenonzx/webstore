@@ -1,4 +1,4 @@
-package com.megastores.webstore.inventory;
+package com.webstore.domain.inventory;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

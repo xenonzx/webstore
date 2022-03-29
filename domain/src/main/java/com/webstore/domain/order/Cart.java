@@ -1,6 +1,6 @@
-package com.megastores.webstore.order;
+package com.webstore.domain.order;
 
-import com.megastores.webstore.storelisting.Product;
+import com.webstore.domain.storelisting.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

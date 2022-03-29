@@ -1,4 +1,4 @@
-package com.megastores.webstore.storelisting;
+package com.webstore.domain.storelisting;
 
 public enum ProductAvailability {
     IN_STOCK,

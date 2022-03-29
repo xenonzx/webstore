@@ -1,4 +1,4 @@
-package com.megastores.webstore.order;
+package com.webstore.domain.order;
 
 public enum OrderStatus {
     CREATED,

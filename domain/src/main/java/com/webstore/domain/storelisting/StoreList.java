@@ -1,6 +1,6 @@
-package com.megastores.webstore.storelisting;
+package com.webstore.domain.storelisting;
 
-import com.megastores.webstore.inventory.Inventory;
+import com.webstore.domain.inventory.Inventory;
 import lombok.AllArgsConstructor;
 
 import java.util.List;

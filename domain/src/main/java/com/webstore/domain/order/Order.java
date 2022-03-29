@@ -1,4 +1,4 @@
-package com.megastores.webstore.order;
+package com.webstore.domain.order;
 
 import java.math.BigDecimal;
 import java.util.List;
