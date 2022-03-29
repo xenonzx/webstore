@@ -17,10 +17,7 @@ public class WebStoreApplication {
         SpringApplication.run(WebStoreApplication.class, args);
     }
 
-    @GetMapping("/v1/cart")
-    public Cart getOrder() {
-        return new Cart();
-    }
+
 
 //    Cart getDummyCart() {
 //        Product p = new Product(1, "product 1", "p1 is great", 1.0);
