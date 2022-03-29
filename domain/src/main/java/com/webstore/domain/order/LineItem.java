@@ -6,13 +6,11 @@ import lombok.Getter;
 
  class LineItem {
     @Getter
-    private final long productId;
-    private final double unitPrice;
+    private final Product product;
     private int quantity;
 
     public LineItem(Product product, Integer quantity) {
-        this.productId = product.getSkuNumber();
-        this.unitPrice = product.getPrice();
+        this.product = product;
         this.quantity = quantity;
     }
 

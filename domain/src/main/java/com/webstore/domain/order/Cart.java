@@ -20,9 +20,14 @@ public class Cart {
     void addLineItem(Product product, int quantity) {
 
         items.stream()
-                .filter(lineItem -> lineItem.getProductId() == product.getSkuNumber())
+                .filter(lineItem -> lineItem.getProduct().getSkuNumber() == product.getSkuNumber())
                 .findFirst()
                 .ifPresentOrElse(lineItem -> lineItem.addQuantity(quantity), () -> items.add(new LineItem(product, quantity)));
 
     }
+
+    void clearCart() {
+        items.clear();
+    }
+    // TODO delete later
 }
