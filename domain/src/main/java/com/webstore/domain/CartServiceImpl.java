@@ -1,11 +1,12 @@
 package com.webstore.domain;
 
 import com.webstore.domain.entity.Cart;
-import lombok.AllArgsConstructor;
+import com.webstore.domain.transfer.CartMapper;
+import com.webstore.domain.transfer.CartTransferObject;
 
-@AllArgsConstructor
+// TODO find a way to inject the cart through constructor injection
 public class CartServiceImpl implements CartService {
-    final Cart cart;
+    final Cart cart = new Cart();
 
     @Override
     public CartTransferObject getCart() {
@@ -19,6 +20,6 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void clearCart() {
-       cart.clear();
+        cart.clear();
     }
 }
