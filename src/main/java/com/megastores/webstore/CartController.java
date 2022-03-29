@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-public class CartController {
+public class  CartController {
     final CartService service;
 
     @GetMapping("/v1/cart")
@@ -20,8 +20,8 @@ public class CartController {
     }
 
     @PostMapping("/v1/cart")
-    public void addToCart(@RequestBody AddToCartRequestBody.AddItemToCart addItemToCart) {
-        service.addLineItem(addItemToCart.getSkuNumber(), addItemToCart.getQuantity());
-        //body.getList().forEach(addItemToCart -> service.addLineItem(addItemToCart.getSkuNumber(), addItemToCart.getQuantity()));
+    public void addToCart(@RequestBody AddToCartRequestBody body) {
+        //service.addLineItem(addItemToCart.getSkuNumber(), addItemToCart.getQuantity());
+        body.getList().forEach(addItemToCart -> service.addLineItem(addItemToCart.getSkuNumber(), addItemToCart.getQuantity()));
     }
 }

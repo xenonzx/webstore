@@ -1,17 +1,12 @@
 package com.megastores.webstore.rest;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 
+@NoArgsConstructor
 @Data
 public class AddToCartRequestBody {
-    final ArrayList<AddItemToCart> list;
-
-    @Data
-    static public class AddItemToCart {
-        final long skuNumber;
-        final int quantity;
-
-    }
+    ArrayList<AddItemToCart> list;
 }
