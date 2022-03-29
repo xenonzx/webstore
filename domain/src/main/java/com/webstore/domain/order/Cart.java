@@ -16,9 +16,7 @@ public class Cart {
     @NonNull
     private ArrayList<LineItem> items = new ArrayList<>();
 
-
-    void addLineItem(Product product, int quantity) {
-
+    public void addLineItem(Product product, int quantity) {
         items.stream()
                 .filter(lineItem -> lineItem.getProduct().getSkuNumber() == product.getSkuNumber())
                 .findFirst()
@@ -26,7 +24,7 @@ public class Cart {
 
     }
 
-    void clearCart() {
+    public void clear() {
         items.clear();
     }
     // TODO delete later

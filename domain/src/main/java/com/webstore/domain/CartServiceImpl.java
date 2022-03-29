@@ -1,10 +1,16 @@
 package com.webstore.domain;
 
+import com.webstore.domain.order.Cart;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class CartServiceImpl implements CartService {
-   final ProductsRepository productsRepository;
+    final Cart cart;
+
+    @Override
+    public CartTransferObject getCart() {
+        return new CartMapper(cart).map();
+    }
 
     @Override
     public void addLineItem(long skuNumber, int quantity) {
@@ -12,8 +18,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void clear() {
-
+    public void clearCart() {
+       cart.clear();
     }
-
 }
