@@ -1,6 +1,5 @@
-package com.webstore.domain.order;
+package com.webstore.domain.entity;
 
-import com.webstore.domain.storelisting.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

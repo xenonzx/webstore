@@ -1,6 +1,5 @@
-package com.webstore.domain.storelisting;
+package com.webstore.domain.entity;
 
-import com.webstore.domain.inventory.Inventory;
 import lombok.AllArgsConstructor;
 
 import java.util.List;

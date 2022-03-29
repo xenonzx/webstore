@@ -1,6 +1,6 @@
 package com.webstore.domain;
 
-import com.webstore.domain.order.Cart;
+import com.webstore.domain.entity.Cart;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

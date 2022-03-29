@@ -1,7 +1,7 @@
 package com.webstore.domain;
 
-import com.webstore.domain.order.Cart;
-import com.webstore.domain.order.LineItem;
+import com.webstore.domain.entity.Cart;
+import com.webstore.domain.entity.LineItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

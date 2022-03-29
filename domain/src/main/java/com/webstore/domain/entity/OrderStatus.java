@@ -1,4 +1,4 @@
-package com.webstore.domain.order;
+package com.webstore.domain.entity;
 
 enum OrderStatus {
     CREATED,

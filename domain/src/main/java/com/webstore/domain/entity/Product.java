@@ -1,4 +1,4 @@
-package com.webstore.domain.storelisting;
+package com.webstore.domain.entity;
 
 import lombok.Data;
 

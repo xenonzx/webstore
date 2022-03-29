@@ -1,4 +1,4 @@
-package com.webstore.domain.inventory;
+package com.webstore.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

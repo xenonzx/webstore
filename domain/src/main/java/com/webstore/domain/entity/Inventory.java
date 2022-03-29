@@ -1,11 +1,11 @@
-package com.webstore.domain.inventory;
+package com.webstore.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 
 @AllArgsConstructor
-public class Inventory {
+class Inventory {
     // TODO later make it list of warehouses
     @Getter
     final Warehouse warehouse;
