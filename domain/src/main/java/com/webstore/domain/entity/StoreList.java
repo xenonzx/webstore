@@ -1,6 +1,6 @@
 package com.webstore.domain.entity;
 
-import com.webstore.domain.ProductsProvider;
+import com.webstore.domain.ProductRepository;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 // can change product price if user is store listing admin this is a todo
 @AllArgsConstructor
 class StoreList {
-    final ProductsProvider productsProvider;
+    final ProductRepository productsProvider;
 
     List<Product> listAllInStockProducts() {
         return productsProvider

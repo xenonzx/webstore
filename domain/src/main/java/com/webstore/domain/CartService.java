@@ -5,9 +5,9 @@ import com.webstore.domain.transfer.CartTransferObject;
 // driving port for the cart model
 // Domain Service Layer
 public interface CartService extends DrivingPort {
-    CartTransferObject getCart();
+    CartTransferObject getCart(int id);
 
-    void addLineItem(long skuNumber, int quantity);
+    void addLineItem(int id, long skuNumber, int quantity);
 
-    void clearCart();
+    void clearCart(int id);
 }

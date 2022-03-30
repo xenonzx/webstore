@@ -5,7 +5,7 @@ import lombok.NonNull;
 import java.util.List;
 import java.util.Optional;
 
-public interface ProductsProvider extends DrivenPort {
+public interface ProductRepository extends DrivenPort {
     Optional<Product> getProduct(long skuNumber);
 
     @NonNull
