@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'com.megastores'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.22'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    implementation project(':domain')
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,7 +1,7 @@
 package com.megastores.webstore;
 
 import com.megastores.webstore.rest.AddToCartRequestBody;
-import com.webstore.domain.CartService;
+import com.webstore.domainservice.CartService;
 import com.webstore.domain.transfer.CartTransferObject;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

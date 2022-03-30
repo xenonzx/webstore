@@ -1,11 +1,9 @@
-package com.webstore.domain;
+package com.webstore.domainservice;
 
-import com.webstore.domain.transfer.CartMapper;
 import com.webstore.domain.transfer.CartTransferObject;
 import com.webstore.domain.usecase.AddItemToCartUseCase;
 import com.webstore.domain.usecase.ClearCartUseCase;
 import com.webstore.domain.usecase.LoadMappedCartUseCase;
-import com.webstore.domain.usecase.LoadProductUseCase;
 import lombok.AllArgsConstructor;
 
 // TODO check if you can split service into multiple usecase

@@ -1,5 +1,6 @@
-package com.webstore.domain;
+package com.webstore.domainservice;
 
+import com.webstore.domain.DrivingPort;
 import com.webstore.domain.transfer.CartTransferObject;
 
 // driving port for the cart model

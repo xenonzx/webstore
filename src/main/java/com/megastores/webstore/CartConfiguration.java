@@ -1,7 +1,7 @@
 package com.megastores.webstore;
 
-import com.webstore.domain.CartService;
-import com.webstore.domain.CartServiceImpl;
+import com.webstore.domainservice.CartService;
+import com.webstore.domainservice.CartServiceImpl;
 import com.webstore.domain.ProductRepository;
 import com.webstore.domain.repo.CartRepository;
 import com.webstore.domain.usecase.AddItemToCartUseCase;
