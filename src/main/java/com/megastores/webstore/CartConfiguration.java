@@ -1,5 +1,7 @@
 package com.megastores.webstore;
 
+import com.megastores.webstore.datasource.DummyCartProvider;
+import com.megastores.webstore.datasource.DummyProductsAdapter;
 import com.webstore.domainservice.CartService;
 import com.webstore.domainservice.CartServiceImpl;
 import com.webstore.domain.ProductRepository;
@@ -33,7 +35,12 @@ public class CartConfiguration {
     }
 
     @Bean
-    ProductRepository provideProductsProvider() {
+    ProductRepository provideProductsRepository() {
         return new DummyProductsAdapter();
+    }
+
+    @Bean
+    CartRepository provideCartRepository(){
+        return new DummyCartProvider();
     }
 }

@@ -1,4 +1,4 @@
-package com.megastores.webstore;
+package com.megastores.webstore.datasource;
 
 import com.webstore.domain.ProductRepository;
 import com.webstore.domain.entity.Product;
