@@ -9,5 +9,8 @@ public class Product {
     final String name;
     final String desc;
     final Double price;
+    final int availableQuantity;
+    // season is a property that we dont want to show it to user according to our business logic
+    final String season;
 }
 
