@@ -20,4 +20,9 @@ public class DummyCartProvider implements CartRepository {
         }
         return Optional.empty();
     }
+
+    @Override
+    public void saveCart(Cart cart) {
+        // TODO
+    }
 }

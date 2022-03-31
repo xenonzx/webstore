@@ -18,6 +18,6 @@ public class AddItemToCartUseCase {
         Optional<Cart> cart = cartRepository.getCart(id);
         Optional<Product> p = productRepository.getProduct(skuNumber);
         p.ifPresent(product -> cart.ifPresent(cart1 -> cart1.addLineItem(product, quantity)));
-
+        cartRepository.saveCart(cart.get());
     }
 }
