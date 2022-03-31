@@ -10,13 +10,11 @@ public class DummyCartProvider implements CartRepository {
     private final Cart cart2 = new Cart();
 
     @Override
-    public Optional<Cart> getCart(int id) {
-        switch (id) {
-            case 1:
-                return Optional.of(cart1);
-            case 2:
-                return Optional.of(cart2);
-
+    public Optional<Cart> getCart(Long id) {
+        if (id == 1L) {
+            return Optional.of(cart1);
+        } else if (id == 2L) {
+            return Optional.of(cart2);
         }
         return Optional.empty();
     }

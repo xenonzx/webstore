@@ -5,6 +5,6 @@ import com.webstore.domain.entity.Cart;
 import java.util.Optional;
 
 public interface CartRepository {
-    Optional<Cart> getCart(int id);
+    Optional<Cart> getCart(Long id);
     void saveCart(Cart cart);
 }

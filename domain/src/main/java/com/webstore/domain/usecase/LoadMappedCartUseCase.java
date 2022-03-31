@@ -10,7 +10,7 @@ public class LoadMappedCartUseCase {
     final CartRepository cartRepository;
 
     // cart id or user id depend on the requirement
-    public CartTransferObject invoke(int id) {
+    public CartTransferObject invoke(Long id) {
         return new CartMapper(cartRepository.getCart(id).get()).map();
     }
 }

@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 public class ClearCartUseCase {
     final CartRepository cartRepository;
 
-    public void invoke(int id) {
+    public void invoke(Long id) {
         cartRepository.getCart(id).get().clear();
     }
 }

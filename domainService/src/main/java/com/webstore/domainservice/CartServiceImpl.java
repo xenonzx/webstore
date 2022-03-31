@@ -15,12 +15,12 @@ public class CartServiceImpl implements CartService {
     final ClearCartUseCase clearCartUseCase;
 
     @Override
-    public CartTransferObject getCart(int id) {
+    public CartTransferObject getCart(Long id) {
         return loadCartUseCase.invoke(id);
     }
 
     @Override
-    public void addLineItem(int id, long skuNumber, int quantity) {
+    public void addLineItem(Long id, long skuNumber, int quantity) {
         // TODO validate over skuNumberFormat (not sure if this is the place for validation)
         // TODO handle if product is not found here
         // TODO handel quantity ( should be the responsibility of the cart)
@@ -28,7 +28,7 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void clearCart(int id) {
+    public void clearCart(Long id) {
         clearCartUseCase.invoke(id);
     }
 }
