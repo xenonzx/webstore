@@ -1,6 +1,6 @@
 package com.megastores.webstore;
 
-import com.megastores.webstore.rest.AddToCartRequestBody;
+import com.megastores.webstore.dto.AddToCartRequestDTO;
 import com.webstore.domainservice.CartService;
 import com.webstore.domain.transfer.CartTransferObject;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class CartController {
     }
 
     @PostMapping("/v1/cart")
-    public void addToCart(@RequestBody AddToCartRequestBody body) {
+    public void addToCart(@RequestBody AddToCartRequestDTO body) {
         //TODO
         int id = 1;
         body.getList().forEach(addItemToCart -> service.addLineItem(id, addItemToCart.getSkuNumber(), addItemToCart.getQuantity()));

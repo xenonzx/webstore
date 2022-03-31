@@ -1,9 +1,9 @@
-package com.megastores.webstore.rest;
+package com.megastores.webstore.dto;
 
 import lombok.Data;
 
 @Data
-public class AddItemToCart {
+public class AddItemToCartDTO {
     final long skuNumber;
     final int quantity;
 
