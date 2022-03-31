@@ -1,11 +1,11 @@
 package com.megastores.webstore.datasource;
 
 import com.webstore.domain.entity.Cart;
-import com.webstore.domain.repo.CartRepository;
+import com.webstore.domain.adapter.CartAdapter;
 
 import java.util.Optional;
 
-public class DummyCartProvider implements CartRepository {
+public class DummyCartProvider implements CartAdapter {
     private final Cart cart1 = new Cart();
     private final Cart cart2 = new Cart();
 

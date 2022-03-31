@@ -1,13 +1,13 @@
 package com.webstore.domain.usecase;
 
-import com.webstore.domain.repo.CartRepository;
+import com.webstore.domain.adapter.CartAdapter;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class ClearCartUseCase {
-    final CartRepository cartRepository;
+    final CartAdapter cartAdapter;
 
     public void invoke(Long id) {
-        cartRepository.getCart(id).get().clear();
+        cartAdapter.getCart(id).get().clear();
     }
 }

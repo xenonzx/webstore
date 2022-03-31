@@ -1,10 +1,10 @@
-package com.webstore.domain.repo;
+package com.webstore.domain.adapter;
 
 import com.webstore.domain.entity.Cart;
 
 import java.util.Optional;
 
-public interface CartRepository {
+public interface CartAdapter {
     Optional<Cart> getCart(Long id);
     void saveCart(Cart cart);
 }

@@ -4,8 +4,8 @@ import com.megastores.webstore.datasource.DummyCartProvider;
 import com.megastores.webstore.datasource.DummyProductsAdapter;
 import com.webstore.domainservice.CartService;
 import com.webstore.domainservice.CartServiceImpl;
-import com.webstore.domain.ProductRepository;
-import com.webstore.domain.repo.CartRepository;
+import com.webstore.domain.adapter.ProductAdapter;
+import com.webstore.domain.adapter.CartAdapter;
 import com.webstore.domain.usecase.AddItemToCartUseCase;
 import com.webstore.domain.usecase.ClearCartUseCase;
 import com.webstore.domain.usecase.LoadMappedCartUseCase;
@@ -20,27 +20,27 @@ public class CartConfiguration {
     }
 
     @Bean
-    LoadMappedCartUseCase provideLoadMappedCartUseCase(CartRepository cartRepository) {
+    LoadMappedCartUseCase provideLoadMappedCartUseCase(CartAdapter cartRepository) {
         return new LoadMappedCartUseCase(cartRepository);
     }
 
     @Bean
-    ClearCartUseCase provideClearCartUseCase(CartRepository cartRepository) {
-        return new ClearCartUseCase(cartRepository);
+    ClearCartUseCase provideClearCartUseCase(CartAdapter cartAdapter) {
+        return new ClearCartUseCase(cartAdapter);
     }
 
     @Bean
-    AddItemToCartUseCase provideAddItemToCartUseCase(CartRepository cartRepository, ProductRepository productsRepository) {
-        return new AddItemToCartUseCase(cartRepository, productsRepository);
+    AddItemToCartUseCase provideAddItemToCartUseCase(CartAdapter cartAdapter, ProductAdapter productsRepository) {
+        return new AddItemToCartUseCase(cartAdapter, productsRepository);
     }
 
     @Bean
-    ProductRepository provideProductsRepository() {
+    ProductAdapter provideProductsRepository() {
         return new DummyProductsAdapter();
     }
 
     @Bean
-    CartRepository provideCartRepository(){
+    CartAdapter provideCartRepository(){
         return new DummyCartProvider();
     }
 }

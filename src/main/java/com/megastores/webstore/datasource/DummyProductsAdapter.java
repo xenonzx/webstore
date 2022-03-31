@@ -1,6 +1,6 @@
 package com.megastores.webstore.datasource;
 
-import com.webstore.domain.ProductRepository;
+import com.webstore.domain.adapter.ProductAdapter;
 import com.webstore.domain.entity.Product;
 import lombok.NonNull;
 
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class DummyProductsAdapter implements ProductRepository {
+public class DummyProductsAdapter implements ProductAdapter {
     @NonNull
     ArrayList<Product> products = new ArrayList<Product>(
             List.of(
