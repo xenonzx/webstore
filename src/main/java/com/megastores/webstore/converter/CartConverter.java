@@ -3,6 +3,9 @@ package com.megastores.webstore.converter;
 import com.megastores.webstore.dataEntities.CartDataEntity;
 import com.megastores.webstore.dataEntities.LineItemDataEntity;
 import com.megastores.webstore.dataEntities.ProductDataEntity;
+import com.megastores.webstore.repo.CartRepository;
+import com.megastores.webstore.repo.LineItemRepository;
+import com.megastores.webstore.repo.ProductRepository;
 import com.webstore.domain.entity.Cart;
 import com.webstore.domain.entity.LineItem;
 import com.webstore.domain.entity.Product;
@@ -22,7 +25,8 @@ interface Converter<DOMAIN, DATA> {
 @AllArgsConstructor
 @Component
 public class CartConverter implements Converter<Cart, CartDataEntity> {
-    LineItemConverter lineItemConverter;
+    final LineItemConverter lineItemConverter;
+    final CartRepository cartRepository;
 
 
     @Override
@@ -37,8 +41,10 @@ public class CartConverter implements Converter<Cart, CartDataEntity> {
 
     @Override
     public CartDataEntity toDataModel(Cart cart) {
-        List<LineItemDataEntity>items = cart.getItems().stream().map(lineItem ->lineItemConverter.toDataModel(lineItem)).collect(Collectors.toList());;
-        return new CartDataEntity(cart.getId(),items);
+        List<LineItemDataEntity> items = cart.getItems().stream().map(lineItem -> lineItemConverter.toDataModel(lineItem)).collect(Collectors.toList());
+        CartDataEntity cartDataEntity = new CartDataEntity(cart.getId(), items);
+        cartRepository.save(cartDataEntity);
+        return cartDataEntity;
     }
 }
 
@@ -46,6 +52,7 @@ public class CartConverter implements Converter<Cart, CartDataEntity> {
 @Component
 class LineItemConverter implements Converter<LineItem, LineItemDataEntity> {
     final ProductConverter productConverter;
+    final LineItemRepository lineItemRepository;
 
     @Override
     public LineItem toDomainModel(LineItemDataEntity l) {
@@ -56,12 +63,17 @@ class LineItemConverter implements Converter<LineItem, LineItemDataEntity> {
     @Override
     public LineItemDataEntity toDataModel(LineItem l) {
         ProductDataEntity product = productConverter.toDataModel(l.getProduct());
-        return new LineItemDataEntity(product, l.getId(), l.getQuantity());
+        LineItemDataEntity lineItemDataEntity = new LineItemDataEntity(product, l.getId(), l.getQuantity());
+        lineItemRepository.save(lineItemDataEntity);
+        return lineItemDataEntity;
     }
 }
 
+@AllArgsConstructor
 @Component
 class ProductConverter implements Converter<Product, ProductDataEntity> {
+    final ProductRepository productRepository;
+
     @Override
     public Product toDomainModel(ProductDataEntity p) {
         return new Product(p.getSkuNumber(), p.getName(), p.getDesc(), p.getPrice(), p.getAvailableQuantity(), p.getSeason());
@@ -69,6 +81,8 @@ class ProductConverter implements Converter<Product, ProductDataEntity> {
 
     @Override
     public ProductDataEntity toDataModel(Product p) {
-        return new ProductDataEntity(p.getSkuNumber(), p.getName(), p.getDesc(), p.getPrice(), p.getAvailableQuantity(), p.getSeason());
+        ProductDataEntity productDataEntity = new ProductDataEntity(p.getSkuNumber(), p.getName(), p.getDesc(), p.getPrice(), p.getAvailableQuantity(), p.getSeason());
+        productRepository.save(productDataEntity);
+        return productDataEntity;
     }
 }
