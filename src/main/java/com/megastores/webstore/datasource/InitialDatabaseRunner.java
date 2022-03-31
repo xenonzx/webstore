@@ -1,27 +1,41 @@
 package com.megastores.webstore.datasource;
 
 
+import com.megastores.webstore.dataEntities.CartDataEntity;
+import com.megastores.webstore.dataEntities.ProductDataEntity;
+import com.megastores.webstore.repo.CartRepository;
+import com.megastores.webstore.repo.ProductRepository;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import com.megastores.webstore.dataEntities.ProductDataEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@NoArgsConstructor
 public class InitialDatabaseRunner implements CommandLineRunner {
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private CartRepository cartRepository;
 
     @Override
     public void run(String... args) throws Exception {
+
         ArrayList<ProductDataEntity> products = new ArrayList<ProductDataEntity>(
                 List.of(
-                        new ProductDataEntity(1, "product 1:", "short desc", 10.0, 10, "2020"),
-                        new ProductDataEntity(2, "product 2:", "short desc", 20.0, 10, "2021"),
-                        new ProductDataEntity(3, "product 3:", "short desc", 30.0, 10, "2022"),
-                        new ProductDataEntity(4, "rare product :", "short desc", 5.0, 2, "2020"),
-                        new ProductDataEntity(5, "coming soon product", "short desc", 30.0, 0, "2023")
+                        new ProductDataEntity(1L, "product 1:", "short desc", 10.0, 10, "2020"),
+                        new ProductDataEntity(2L, "product 2:", "short desc", 20.0, 10, "2021"),
+                        new ProductDataEntity(3L, "product 3:", "short desc", 30.0, 10, "2022"),
+                        new ProductDataEntity(4L, "rare product :", "short desc", 5.0, 2, "2020"),
+                        new ProductDataEntity(5L, "coming soon product", "short desc", 30.0, 0, "2023")
                 )
         );
+        productRepository.saveAll(products);
+        cartRepository.save(new CartDataEntity());
+        cartRepository.save(new CartDataEntity());
 
     }
 }
