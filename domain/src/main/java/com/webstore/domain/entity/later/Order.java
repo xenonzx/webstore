@@ -1,4 +1,6 @@
-package com.webstore.domain.entity;
+package com.webstore.domain.entity.later;
+
+import com.webstore.domain.entity.LineItem;
 
 import java.math.BigDecimal;
 import java.util.List;

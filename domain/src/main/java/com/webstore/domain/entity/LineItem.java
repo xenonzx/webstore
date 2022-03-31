@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class LineItem {
+    private final Long id;
     private final Product product;
     private int quantity;
 

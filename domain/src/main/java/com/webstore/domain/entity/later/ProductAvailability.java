@@ -1,4 +1,4 @@
-package com.webstore.domain.entity;
+package com.webstore.domain.entity.later;
 
 enum ProductAvailability {
     IN_STOCK,
