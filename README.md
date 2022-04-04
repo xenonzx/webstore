@@ -11,6 +11,9 @@ domain module contains the domain entites
 the only way to coordinate with domain entities is through usecases
 usecases are resonisible for reading from and writing to ports (repositories) after executing business case
 
+security
+granting access  to certain resources according to role.
+
 todos
 make sku number a self validating domain object
 replace NoOpPasswordEncoder with proper encoder
