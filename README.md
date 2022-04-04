@@ -13,6 +13,8 @@ usecases are resonisible for reading from and writing to ports (repositories) af
 
 todos
 make sku number a self validating domain object
+replace NoOpPasswordEncoder with proper encoder
+remove http.csrf().disable();
 
 docker
 unit test
