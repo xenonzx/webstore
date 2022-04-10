@@ -3,8 +3,12 @@ package com.megastores.webstore.datasource;
 
 import com.megastores.webstore.dataEntities.CartDataEntity;
 import com.megastores.webstore.dataEntities.ProductDataEntity;
+import com.megastores.webstore.dataEntities.User;
 import com.megastores.webstore.repo.CartRepository;
 import com.megastores.webstore.repo.ProductRepository;
+import com.megastores.webstore.repo.UserRepository;
+import com.megastores.webstore.security.AdminRole;
+import com.megastores.webstore.security.UserRole;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +25,9 @@ public class InitialDatabaseRunner implements CommandLineRunner {
     @Autowired
     private CartRepository cartRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -36,6 +43,8 @@ public class InitialDatabaseRunner implements CommandLineRunner {
         productRepository.saveAll(products);
         cartRepository.save(new CartDataEntity());
         cartRepository.save(new CartDataEntity());
+        userRepository.save(new User(1L, "user", "1234", "ROLE_USER"));
+        userRepository.save(new User(2L, "admin", "1234", "ROLE_ADMIN"));
 
     }
 }
