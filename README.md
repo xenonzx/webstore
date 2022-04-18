@@ -22,3 +22,11 @@ remove http.csrf().disable();
 docker
 unit test
 security
+
+running the docker Image
+1. build the app ` ./gradlew build      `
+2. package it ino default location using `java -jar build/libs/webstore-0.0.1-SNAPSHOT.jar`
+3. run the docker image and map the port to port 8080 ` docker  run -p8080:8080 webstore `
+
+
+
