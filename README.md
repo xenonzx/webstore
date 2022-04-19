@@ -18,6 +18,7 @@ todos
 make sku number a self validating domain object
 replace NoOpPasswordEncoder with proper encoder
 remove http.csrf().disable();
+add self signing ssl certificate.
 
 docker
 unit test
