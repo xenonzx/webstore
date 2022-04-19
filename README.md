@@ -31,3 +31,8 @@ running the docker Image
 
 
 
+env vars
+export KEYSTORE_LOCATION=webstore.p12
+export KEYSTORE_PASSWORD=webstore
+export KEY_PASSWORD=webstore
+export SERVER_PORT=443
