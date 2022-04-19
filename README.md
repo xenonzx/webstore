@@ -14,11 +14,17 @@ usecases are resonisible for reading from and writing to ports (repositories) af
 security
 granting access  to certain resources according to role.
 
-todos
+
+Done tasks
+--
+add self signing ssl certificate.
+
+Todos
+--
 make sku number a self validating domain object
 replace NoOpPasswordEncoder with proper encoder
 remove http.csrf().disable();
-add self signing ssl certificate.
+add mapstruct lib for dto
 
 docker
 unit test
@@ -30,9 +36,11 @@ running the docker Image
 3. run the docker image and map the port to port 8080 ` docker  run -p8080:8080 webstore `
 
 
-
 env vars
 export KEYSTORE_LOCATION=webstore.p12
 export KEYSTORE_PASSWORD=webstore
 export KEY_PASSWORD=webstore
 export SERVER_PORT=443
+
+to run application and override default name 
+try  java -jar build/libs/webstore-0.0.1-SNAPSHOT.jar --app.name="overrieded"
